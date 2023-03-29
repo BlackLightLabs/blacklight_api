@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: web
+        image: coleagard/blacklight:latest # Replace with your Docker image for the Django app
+        command: ["gunicorn", "config.wsgi:application", "--bind", "0.0.0.0:8000"]
+        envFrom:
+        - secretRef:
+            name: web-env
+        ports:
+        - containerPort: 8000
+      imagePullSecrets:
+      - name: dockerhub-credentials

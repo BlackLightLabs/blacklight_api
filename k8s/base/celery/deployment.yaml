@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: celery
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: celery
+  template:
+    metadata:
+      labels:
+        app: celery
+    spec:
+      containers:
+      - name: celery
+        image: coleagard/blacklight:latest # Replace with your Docker image for the Django app
+        command: ["celery", "-A", "config", "worker", "-l", "info"]
+        envFrom:
+        - secretRef:
+            name: web-env
+      imagePullSecrets:
+      - name: dockerhub-credentials

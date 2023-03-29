@@ -1,0 +1,6 @@
+.db-credentials.kubernetes
+.web-env.kubernetes
+.env
+.kubernetes_storage
+.idea
+db.sqlite3

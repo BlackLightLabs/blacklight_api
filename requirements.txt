@@ -1,0 +1,10 @@
+celery
+django
+psycopg2-binary
+djangorestframework
+redis
+python-decouple
+scikit-learn
+tqdm
+blacklight
+gunicorn
