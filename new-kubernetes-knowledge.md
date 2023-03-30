@@ -30,4 +30,9 @@ kubectl create secret generic db-credentials --from-env-file=./.db-credentials.k
 ```bash
 kubectl create configmap nginx-config --from-file=./nginx/nginx.conf
 ```
-
+# If staticfiles are not working: 
+```bash
+kubectl exec -it <web-pod-name> -- python manage.py makemigrations
+kubectl exec -it <web-pod-name> -- python manage.py migrate
+kubectl exec -it <web-pod-name> -- python manage.py collectstatic --no-input
+```

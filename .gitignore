@@ -4,3 +4,4 @@
 .kubernetes_storage
 .idea
 db.sqlite3
+*.pyc

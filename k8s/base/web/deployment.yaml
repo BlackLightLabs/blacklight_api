@@ -21,5 +21,12 @@ spec:
             name: web-env
         ports:
         - containerPort: 8000
+        volumeMounts:
+        - name: static-volume
+          mountPath: /code/staticfiles
+      volumes:
+        - name: static-volume
+          persistentVolumeClaim:
+            claimName: static-volume
       imagePullSecrets:
       - name: dockerhub-credentials
