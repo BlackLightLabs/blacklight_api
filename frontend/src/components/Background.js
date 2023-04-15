@@ -13,6 +13,7 @@ const Background = () => {
         const canvasElem = canvasRef.current;
 
         const renderer = new THREE.WebGLRenderer({canvas: canvasElem});
+        renderer.setPixelRatio(window.devicePixelRatio);
 
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.shadowMap.enabled = false;
