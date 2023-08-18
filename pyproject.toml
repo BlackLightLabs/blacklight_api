@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "blacklight_api"
+version = "0.0.1"
+description = "Django REST API for the Blacklight project"
+authors = ["Cole Agard <cole.thomas.agard@gmail.com>", "Jay Delany <JohnDelany30@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Django = "*"
+djangorestframework = "*"
+djangorestframework-simplejwt = "*"
+psycopg2-binary = "*"
+celery = "*"
+python-decouple = "^3.8"
+
+[tool.poetry.dev-dependencies]
+flake8 = "*"
+autopep8 = "*"
+coverage = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
