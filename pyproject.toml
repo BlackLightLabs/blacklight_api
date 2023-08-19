@@ -13,13 +13,24 @@ djangorestframework-simplejwt = "*"
 psycopg2-binary = "*"
 celery = "*"
 python-decouple = "^3.8"
+django-stubs = "^4.2.3"
 
 [tool.poetry.dev-dependencies]
 flake8 = "*"
 autopep8 = "*"
 coverage = "*"
 
+[tool.poetry.group.dev.dependencies]
+debugpy = "^1.6.7.post1"
+pytest = "^7.4.0"
+pytest-django = "^4.5.2"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
+[tool.pyright]
+reportGeneralTypeIssues = false
+
+[tool.pyright.plugins]
+django-stubs = true
